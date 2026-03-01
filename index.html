@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakshi Lal | Finance Professional</title>
+    <meta name="description" content="Sakshi Lal — Business Valuation Specialist. MS Finance (UT Austin), MBA Tech (NMIMS). Former EY Parthenon Senior Associate. Based in London.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>S</text></svg>">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-chart">
+                <svg viewBox="0 0 200 80" class="loader-svg">
+                    <polyline class="loader-line" points="0,60 30,55 50,40 70,45 90,20 120,35 150,15 180,25 200,10" />
+                </svg>
+            </div>
+            <span class="loader-text">SL</span>
+        </div>
+    </div>
+
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-text">S<span class="logo-dot">.</span>L</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
+                <a href="#interests" class="nav-link">Interests</a>
+                <a href="#contact" class="nav-link nav-link--cta">Get in Touch</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Financial Ticker -->
+    <div class="ticker" id="ticker">
+        <div class="ticker-track">
+            <div class="ticker-content" id="tickerContent">
+                <span class="ticker-item"><span class="ticker-label">VALUATION</span> <span class="ticker-up">+DCF</span></span>
+                <span class="ticker-divider">|</span>
+                <span class="ticker-item"><span class="ticker-label">PPA</span> <span class="ticker-up">+ASC 805</span></span>
+                <span class="ticker-divider">|</span>
+                <span class="ticker-item"><span class="ticker-label">EQUITY</span> <span class="ticker-up">+ANALYSIS</span></span>
+                <span class="ticker-divider">|</span>
+                <span class="ticker-item"><span class="ticker-label">GOODWILL</span> <span class="ticker-neutral">IMPAIRMENT</span></span>
+                <span class="ticker-divider">|</span>
+                <span class="ticker-item"><span class="ticker-label">OPTION</span> <span class="ticker-up">+PRICING</span></span>
+                <span class="ticker-divider">|</span>
+                <span class="ticker-item"><span class="ticker-label">INTANGIBLE</span> <span class="ticker-up">+ASSETS</span></span>
+                <span class="ticker-divider">|</span>
+                <span class="ticker-item"><span class="ticker-label">FINANCIAL</span> <span class="ticker-up">+REPORTING</span></span>
+                <span class="ticker-divider">|</span>
+                <span class="ticker-item"><span class="ticker-label">PRIVATE</span> <span class="ticker-up">+EQUITY</span></span>
+                <span class="ticker-divider">|</span>
+                <span class="ticker-item"><span class="ticker-label">BLOOMBERG</span> <span class="ticker-neutral">TERMINAL</span></span>
+                <span class="ticker-divider">|</span>
+                <span class="ticker-item"><span class="ticker-label">CAPITAL</span> <span class="ticker-up">+IQ</span></span>
+                <span class="ticker-divider">|</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <svg class="hero-chart" viewBox="0 0 1440 400" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#C9A84C;stop-opacity:0.15"/>
+                        <stop offset="100%" style="stop-color:#C9A84C;stop-opacity:0"/>
+                    </linearGradient>
+                    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#C9A84C;stop-opacity:0.2"/>
+                        <stop offset="50%" style="stop-color:#C9A84C;stop-opacity:1"/>
+                        <stop offset="100%" style="stop-color:#C9A84C;stop-opacity:0.6"/>
+                    </linearGradient>
+                </defs>
+                <path class="chart-area" d="M0,350 C120,320 200,280 360,250 C520,220 600,300 720,200 C840,100 960,180 1080,120 C1200,60 1320,90 1440,40 L1440,400 L0,400 Z" fill="url(#chartGrad)"/>
+                <path class="chart-line" d="M0,350 C120,320 200,280 360,250 C520,220 600,300 720,200 C840,100 960,180 1080,120 C1200,60 1320,90 1440,40" fill="none" stroke="url(#lineGrad)" stroke-width="2"/>
+            </svg>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge animate-in">
+                <span class="badge-dot"></span>
+                Available for opportunities in London
+            </div>
+            <h1 class="hero-name animate-in">
+                <span class="hero-name-line">Sakshi</span>
+                <span class="hero-name-line hero-name-line--accent">Lal</span>
+            </h1>
+            <div class="hero-title animate-in">
+                <span class="hero-title-role">Business Valuation Specialist</span>
+                <span class="hero-title-divider"></span>
+                <span class="hero-title-sub">Finance Professional</span>
+            </div>
+            <p class="hero-description animate-in">
+                Former EY Parthenon Senior Associate with expertise in complex valuation models,
+                purchase price allocations, and financial reporting. Combining analytical rigour
+                with global perspective across India, the US, and the UK.
+            </p>
+            <div class="hero-stats animate-in">
+                <div class="stat">
+                    <span class="stat-number" data-target="2">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Years at EY</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-target="3.81">0</span>
+                    <span class="stat-label">GPA (MS Finance)</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-target="3">0</span>
+                    <span class="stat-label">Countries Lived</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-label">Languages</span>
+                </div>
+            </div>
+            <div class="hero-ctas animate-in">
+                <a href="#contact" class="btn btn-primary">
+                    <span>Let's Connect</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#experience" class="btn btn-outline">
+                    <span>View Experience</span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01</span>
+                <h2 class="section-title">About <span class="text-gold">Me</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p class="about-lead">
+                        I'm a finance professional who believes that every number tells a story
+                        and every valuation reveals the true heartbeat of a business.
+                    </p>
+                    <p>
+                        My journey has taken me from the bustling streets of Mumbai, where I earned
+                        my MBA Tech in Electronics & Telecommunications with a Finance specialisation
+                        from NMIMS, to the vibrant campus of UT Austin's McCombs Business School,
+                        where I completed my MS in Finance with a 3.81 GPA and had the honour of
+                        delivering the <strong>Commencement Speech</strong> for my graduating class.
+                    </p>
+                    <p>
+                        At <strong>EY Parthenon in Los Angeles</strong>, I honed my expertise in business
+                        valuations, purchase price allocations, intangible asset valuations, and goodwill
+                        impairment analyses across diverse industries. I was promoted to Senior Associate
+                        within my first year — a testament to my dedication and the trust my team placed in me.
+                    </p>
+                    <p>
+                        Now based in <strong>London</strong>, I'm eager to bring my unique blend of
+                        American Big Four rigour, Indian entrepreneurial spirit, and global perspective
+                        to new challenges in the UK finance landscape.
+                    </p>
+                </div>
+                <div class="about-card reveal">
+                    <div class="about-card-inner">
+                        <div class="about-card-header">
+                            <span class="card-tag">Quick Facts</span>
+                        </div>
+                        <ul class="about-facts">
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <span>Based in London, UK</span>
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+                                <span>HPI Visa (valid until Feb 2028)</span>
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span>Immediate availability</span>
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                                <span>English, Hindi, Gujarati, French</span>
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                                <span>Bloomberg & CapitalIQ proficient</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02</span>
+                <h2 class="section-title">Professional <span class="text-gold">Experience</span></h2>
+            </div>
+
+            <div class="timeline">
+                <!-- EY Senior -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-card-header">
+                                <div class="timeline-meta">
+                                    <span class="timeline-date">Oct 2023 — Oct 2025</span>
+                                    <span class="timeline-location">Los Angeles, USA</span>
+                                </div>
+                                <div class="timeline-badge">Promoted</div>
+                            </div>
+                            <h3 class="timeline-role">Business Valuation Senior Associate</h3>
+                            <h4 class="timeline-company">Ernst & Young Parthenon</h4>
+                            <ul class="timeline-details">
+                                <li>Developed complex valuation models and performed analyses for clients across diverse industries, utilising income, market, cost approaches, and option pricing for financial reporting and tax purposes</li>
+                                <li>Prepared business enterprise valuations, equity valuations, purchase price allocations (ASC 805), intangible asset valuations, goodwill impairments, and legal entity valuations</li>
+                                <li>Provided key insights ensuring compliance with accounting standards to support valuation of businesses</li>
+                                <li>Collaborated with team members globally and across service lines to ensure high-quality execution in a deadline-driven environment</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span>DCF</span><span>PPA</span><span>Goodwill Impairment</span><span>Option Pricing</span><span>Intangible Assets</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intellect Design -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-card-header">
+                                <div class="timeline-meta">
+                                    <span class="timeline-date">May 2021 — Sep 2021</span>
+                                    <span class="timeline-location">Mumbai, India</span>
+                                </div>
+                            </div>
+                            <h3 class="timeline-role">Business Analyst Intern</h3>
+                            <h4 class="timeline-company">Intellect Design Arena Ltd.</h4>
+                            <ul class="timeline-details">
+                                <li>Strategised launch feasibility of Payment As a Service model leveraging Contextual Banking for European and North American markets under Global Transaction Banking</li>
+                                <li>Led decision-making by forecasting financial statements for profitability analysis, managing budget, costs, resources, and organisation structures over a 5-year period with TAM assessment</li>
+                                <li>Presented business strategy and investment deck to 3 executive managers and senior leadership</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span>PaaS</span><span>Financial Forecasting</span><span>TAM Analysis</span><span>GTB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MedtourEasy -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-card-header">
+                                <div class="timeline-meta">
+                                    <span class="timeline-date">Feb 2021</span>
+                                    <span class="timeline-location">Remote</span>
+                                </div>
+                            </div>
+                            <h3 class="timeline-role">Analyst Trainee</h3>
+                            <h4 class="timeline-company">MedtourEasy</h4>
+                            <ul class="timeline-details">
+                                <li>Recommended investment decisions to senior executives on 2 companies utilising Python</li>
+                                <li>Analysed financial historical data of Facebook and Microsoft and built capital asset pricing model</li>
+                                <li>Devised Capital Asset Pricing Model (CAPM) and Fama-French 3-Factor model to drive investment decisions</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span>Python</span><span>CAPM</span><span>Fama-French</span><span>Investment Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section education" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03</span>
+                <h2 class="section-title">Education <span class="text-gold">& Training</span></h2>
+            </div>
+            <div class="edu-grid">
+                <!-- UT Austin -->
+                <div class="edu-card reveal">
+                    <div class="edu-card-accent"></div>
+                    <div class="edu-card-content">
+                        <div class="edu-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/>
+                            </svg>
+                        </div>
+                        <span class="edu-date">Aug 2022 — May 2023</span>
+                        <h3 class="edu-degree">Master of Science, Finance</h3>
+                        <h4 class="edu-school">The University of Texas at Austin</h4>
+                        <p class="edu-school-sub">McCombs School of Business</p>
+                        <div class="edu-gpa">
+                            <span class="gpa-label">GPA</span>
+                            <span class="gpa-value">3.81</span>
+                            <span class="gpa-max">/ 4.0</span>
+                        </div>
+                        <div class="edu-highlight">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            Commencement Speaker
+                        </div>
+                        <div class="edu-courses">
+                            <span>Advanced Valuation & Modeling</span>
+                            <span>Private Equity</span>
+                            <span>Financial Statement Analysis</span>
+                            <span>Fixed Income</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NMIMS -->
+                <div class="edu-card reveal">
+                    <div class="edu-card-accent"></div>
+                    <div class="edu-card-content">
+                        <div class="edu-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/>
+                            </svg>
+                        </div>
+                        <span class="edu-date">2017 — May 2022</span>
+                        <h3 class="edu-degree">MBA Tech (Integrated)</h3>
+                        <h4 class="edu-school">NMIMS University</h4>
+                        <p class="edu-school-sub">Mumbai, India</p>
+                        <div class="edu-dual">
+                            <div class="edu-dual-item">
+                                <span class="dual-label">B.Tech</span>
+                                <span class="dual-value">Electronics & Telecom</span>
+                            </div>
+                            <div class="edu-dual-item">
+                                <span class="dual-label">MBA</span>
+                                <span class="dual-value">Technology Mgmt (Finance)</span>
+                            </div>
+                        </div>
+                        <div class="edu-gpa">
+                            <span class="gpa-label">GPA</span>
+                            <span class="gpa-value">3.28</span>
+                            <span class="gpa-max">/ 4.0</span>
+                        </div>
+                        <div class="edu-courses">
+                            <span>Financial Planning</span>
+                            <span>International Finance</span>
+                            <span>Predictive Modelling</span>
+                            <span>Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="certs-section reveal">
+                <h3 class="certs-title">Certifications</h3>
+                <div class="certs-grid">
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div>
+                            <span class="cert-name">Data Analysis Using Excel</span>
+                            <span class="cert-org">Rice University, Coursera</span>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div>
+                            <span class="cert-name">Python & Intermediate Python</span>
+                            <span class="cert-org">DataCamp</span>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div>
+                            <span class="cert-name">Financial Concepts & Portfolio Risk Management in Python</span>
+                            <span class="cert-org">DataCamp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04</span>
+                <h2 class="section-title">Core <span class="text-gold">Competencies</span></h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-category-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                    </div>
+                    <h3>Valuation & Analysis</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-bar" style="--width: 95%"></span>Business Enterprise Valuation</li>
+                        <li><span class="skill-bar" style="--width: 95%"></span>Purchase Price Allocation (ASC 805)</li>
+                        <li><span class="skill-bar" style="--width: 90%"></span>Intangible Asset Valuation</li>
+                        <li><span class="skill-bar" style="--width: 90%"></span>Goodwill Impairment Testing</li>
+                        <li><span class="skill-bar" style="--width: 88%"></span>Option Pricing Analysis</li>
+                        <li><span class="skill-bar" style="--width: 92%"></span>DCF & Comparable Analysis</li>
+                    </ul>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-bar" style="--width: 95%"></span>Microsoft Excel (Advanced)</li>
+                        <li><span class="skill-bar" style="--width: 85%"></span>Bloomberg Terminal</li>
+                        <li><span class="skill-bar" style="--width: 85%"></span>S&P CapitalIQ</li>
+                        <li><span class="skill-bar" style="--width: 80%"></span>Python (Data Analysis)</li>
+                        <li><span class="skill-bar" style="--width: 90%"></span>PowerPoint & Word</li>
+                        <li><span class="skill-bar" style="--width: 82%"></span>Financial Modelling</li>
+                    </ul>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-category-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h3>Professional Skills</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-bar" style="--width: 92%"></span>Cross-functional Collaboration</li>
+                        <li><span class="skill-bar" style="--width: 90%"></span>Client Communication</li>
+                        <li><span class="skill-bar" style="--width: 88%"></span>Strategic Thinking</li>
+                        <li><span class="skill-bar" style="--width: 95%"></span>Attention to Detail</li>
+                        <li><span class="skill-bar" style="--width: 85%"></span>Project Management</li>
+                        <li><span class="skill-bar" style="--width: 90%"></span>Public Speaking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section achievements" id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">05</span>
+                <h2 class="section-title">Notable <span class="text-gold">Achievements</span></h2>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card reveal">
+                    <div class="achievement-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15a7 7 0 100-14 7 7 0 000 14z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg>
+                    </div>
+                    <h3>Commencement Speaker</h3>
+                    <p>Selected to deliver the graduation address at McCombs Business School, UT Austin — representing the entire MS Finance cohort</p>
+                </div>
+                <div class="achievement-card reveal">
+                    <div class="achievement-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h3>Early Promotion at EY</h3>
+                    <p>Promoted from Associate to Senior Associate at EY Parthenon within the first year, recognising exceptional performance and leadership</p>
+                </div>
+                <div class="achievement-card reveal">
+                    <div class="achievement-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    </div>
+                    <h3>National Basketball Player</h3>
+                    <p>Competed at the national level in basketball — bringing the same competitive drive and teamwork mindset to every professional challenge</p>
+                </div>
+                <div class="achievement-card reveal">
+                    <div class="achievement-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                    </div>
+                    <h3>Global Career Path</h3>
+                    <p>Built a career spanning three countries — India, United States, and now the United Kingdom — on a High Potential Individual (HPI) visa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section class="section interests" id="interests">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">06</span>
+                <h2 class="section-title">Beyond <span class="text-gold">Finance</span></h2>
+            </div>
+            <div class="interests-content reveal">
+                <div class="interest-item">
+                    <div class="interest-icon-wrap">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Finance Enthusiast</h3>
+                        <p>Avid reader of financial literature and market commentary. I love staying current with valuation trends, market movements, and economic analysis — it's not just work, it's a genuine passion.</p>
+                    </div>
+                </div>
+                <div class="interest-item">
+                    <div class="interest-icon-wrap">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                    </div>
+                    <div>
+                        <h3>Financial Content</h3>
+                        <p>From documentaries on market crashes to podcasts about private equity — I'm always consuming content that deepens my understanding of the financial world and its evolving landscape.</p>
+                    </div>
+                </div>
+                <div class="interest-item">
+                    <div class="interest-icon-wrap">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div>
+                        <h3>Exploring London</h3>
+                        <p>Recently moved to London and loving every moment of discovering this incredible city — from its historic financial district to its vibrant cultural scene. Always up for a recommendation!</p>
+                    </div>
+                </div>
+                <div class="interest-item">
+                    <div class="interest-icon-wrap">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                    </div>
+                    <div>
+                        <h3>Basketball</h3>
+                        <p>A national-level player with a deep love for the game. Basketball taught me teamwork, discipline, and how to perform under pressure — skills I carry into every boardroom.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">07</span>
+                <h2 class="section-title">Let's <span class="text-gold">Connect</span></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-text reveal">
+                    <p class="contact-lead">
+                        I'm actively seeking roles in business valuation, financial advisory,
+                        M&A, and corporate finance in London.
+                    </p>
+                    <p>
+                        Whether you have a role that matches my profile, want to discuss the
+                        finance landscape, or simply want to connect — I'd love to hear from you.
+                    </p>
+                    <div class="contact-info">
+                        <a href="mailto:sakshiknlal@gmail.com" class="contact-link">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span>sakshiknlal@gmail.com</span>
+                        </a>
+                        <a href="tel:+447985365013" class="contact-link">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                            <span>+44 7985 365013</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sakshi-lal-k" target="_blank" rel="noopener" class="contact-link">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>London, United Kingdom</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-card reveal">
+                    <div class="contact-card-inner">
+                        <div class="contact-card-quote">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                            <p>"Every number tells a story. My job is to uncover the narrative that drives value."</p>
+                        </div>
+                        <div class="contact-card-footer">
+                            <div class="contact-card-name">Sakshi Lal</div>
+                            <div class="contact-card-title">Business Valuation Specialist</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="logo-text">S<span class="logo-dot">.</span>L</span>
+                    <p>&copy; 2026 Sakshi Lal. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:sakshiknlal@gmail.com">Email</a>
+                    <a href="https://www.linkedin.com/in/sakshi-lal-k" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="tel:+447985365013">Phone</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
