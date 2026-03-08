@@ -40,6 +40,17 @@
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#achievements" class="nav-link">Achievements</a>
                 <a href="#interests" class="nav-link">Interests</a>
+                <div class="nav-dropdown" id="navDropdown">
+                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                        Tools
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="#dcf-calculator" class="nav-link">DCF Calculator</a>
+                        <a href="#ppa-visualizer" class="nav-link">PPA Visualizer</a>
+                        <a href="#black-scholes" class="nav-link">Black-Scholes</a>
+                    </div>
+                </div>
                 <a href="#contact" class="nav-link nav-link--cta">Get in Touch</a>
             </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -71,6 +82,12 @@
                 <span class="ticker-item"><span class="ticker-label">BLOOMBERG</span> <span class="ticker-neutral">TERMINAL</span></span>
                 <span class="ticker-divider">|</span>
                 <span class="ticker-item"><span class="ticker-label">CAPITAL</span> <span class="ticker-up">+IQ</span></span>
+                <span class="ticker-divider">|</span>
+                <span class="ticker-item"><span class="ticker-label">BLACK-SCHOLES</span> <span class="ticker-neutral">MODEL</span></span>
+                <span class="ticker-divider">|</span>
+                <span class="ticker-item"><span class="ticker-label">WACC</span> <span class="ticker-up">+DISCOUNT</span></span>
+                <span class="ticker-divider">|</span>
+                <span class="ticker-item"><span class="ticker-label">TERMINAL</span> <span class="ticker-up">+VALUE</span></span>
                 <span class="ticker-divider">|</span>
             </div>
         </div>
@@ -567,11 +584,271 @@
         </div>
     </section>
 
+    <!-- DCF Calculator Section -->
+    <section class="section tool-section dcf-calculator" id="dcf-calculator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">07</span>
+                <h2 class="section-title">DCF <span class="text-gold">Calculator</span></h2>
+            </div>
+            <div class="tool-intro reveal">
+                <p>A discounted cash flow model that projects future EBITDA, discounts it to present value using WACC, and calculates terminal value via the Gordon Growth Model. Adjust the inputs to see how each assumption drives enterprise value.</p>
+            </div>
+            <div class="tool-grid">
+                <div class="tool-inputs reveal">
+                    <div class="tool-card">
+                        <h3>Model Inputs</h3>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Base Revenue ($M)</label>
+                                <span class="slider-value" id="dcf-revenue-val">500</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="dcf-revenue" min="50" max="5000" step="50" value="500">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Revenue Growth Rate</label>
+                                <span class="slider-value" id="dcf-growth-val">8%</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="dcf-growth" min="0" max="30" step="0.5" value="8">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>EBITDA Margin</label>
+                                <span class="slider-value" id="dcf-margin-val">20%</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="dcf-margin" min="5" max="60" step="0.5" value="20">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>WACC (Discount Rate)</label>
+                                <span class="slider-value" id="dcf-wacc-val">10%</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="dcf-wacc" min="4" max="25" step="0.25" value="10">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Terminal Growth Rate</label>
+                                <span class="slider-value" id="dcf-tgr-val">2.5%</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="dcf-tgr" min="0" max="5" step="0.25" value="2.5">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Projection Period (Years)</label>
+                                <span class="slider-value" id="dcf-years-val">5</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="dcf-years" min="3" max="10" step="1" value="5">
+                        </div>
+                    </div>
+                </div>
+                <div class="dcf-results reveal">
+                    <div class="tool-card">
+                        <div class="dcf-hero-value">
+                            <span class="label">Enterprise Value</span>
+                            <span class="value" id="dcf-ev">$0</span>
+                            <span class="sub" id="dcf-ev-sub"></span>
+                        </div>
+                        <div class="dcf-breakdown" id="dcf-breakdown"></div>
+                    </div>
+                    <div class="tool-card">
+                        <h3>PV of Cash Flows</h3>
+                        <div class="dcf-bar-chart" id="dcf-bar-chart"></div>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Year-by-Year Projection</h3>
+                        <div class="dcf-table-wrap">
+                            <table class="dcf-table" id="dcf-table">
+                                <thead><tr><th>Year</th><th>Revenue</th><th>EBITDA</th><th>Discount Factor</th><th>PV of EBITDA</th></tr></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PPA Visualizer Section -->
+    <section class="section tool-section ppa-visualizer" id="ppa-visualizer">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">08</span>
+                <h2 class="section-title">PPA <span class="text-gold">Visualizer</span></h2>
+            </div>
+            <div class="tool-intro reveal">
+                <p>Visualise how a purchase price allocation (ASC 805) breaks down an acquisition price into identifiable intangible assets, with goodwill as the residual. Adjust the total price and individual asset values to see the waterfall in real time.</p>
+            </div>
+            <div class="tool-grid">
+                <div class="tool-inputs reveal">
+                    <div class="tool-card">
+                        <h3>Allocation Inputs</h3>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Total Purchase Price ($M)</label>
+                                <span class="slider-value" id="ppa-total-val">500</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="ppa-total" min="50" max="5000" step="25" value="500">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Customer Relationships ($M)</label>
+                                <span class="slider-value" id="ppa-customers-val">120</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="ppa-customers" min="0" max="2000" step="5" value="120">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Trade Name ($M)</label>
+                                <span class="slider-value" id="ppa-tradename-val">60</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="ppa-tradename" min="0" max="1000" step="5" value="60">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Developed Technology ($M)</label>
+                                <span class="slider-value" id="ppa-tech-val">80</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="ppa-tech" min="0" max="1500" step="5" value="80">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Non-Compete Agreements ($M)</label>
+                                <span class="slider-value" id="ppa-noncompete-val">15</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="ppa-noncompete" min="0" max="500" step="5" value="15">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Backlog / Other ($M)</label>
+                                <span class="slider-value" id="ppa-backlog-val">25</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="ppa-backlog" min="0" max="500" step="5" value="25">
+                        </div>
+                    </div>
+                    <div class="ppa-goodwill-display" id="ppa-goodwill-display">
+                        <span class="label">Residual Goodwill</span>
+                        <div class="value" id="ppa-goodwill-val">$200M</div>
+                    </div>
+                </div>
+                <div class="ppa-results reveal">
+                    <div class="tool-card">
+                        <h3>Waterfall Chart</h3>
+                        <div class="ppa-waterfall-wrap">
+                            <svg id="ppa-waterfall" viewBox="0 0 700 320"></svg>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Allocation Summary</h3>
+                        <div class="dcf-table-wrap">
+                            <table class="ppa-summary-table" id="ppa-summary-table">
+                                <thead><tr><th>Asset</th><th>Value ($M)</th><th>% of Total</th></tr></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Black-Scholes Calculator Section -->
+    <section class="section tool-section black-scholes" id="black-scholes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">09</span>
+                <h2 class="section-title">Black-Scholes <span class="text-gold">Calculator</span></h2>
+            </div>
+            <div class="tool-intro reveal">
+                <p>The Black-Scholes-Merton model prices European call and put options, along with the five Greeks that measure sensitivity to market parameters. Adjust inputs to explore how spot price, volatility, and time interact to determine option value.</p>
+            </div>
+            <div class="tool-grid">
+                <div class="tool-inputs reveal">
+                    <div class="tool-card">
+                        <h3>Option Parameters</h3>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Spot Price (S)</label>
+                                <span class="slider-value" id="bs-spot-val">$100</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="bs-spot" min="10" max="300" step="1" value="100">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Strike Price (K)</label>
+                                <span class="slider-value" id="bs-strike-val">$100</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="bs-strike" min="10" max="300" step="1" value="100">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Time to Expiry (Years)</label>
+                                <span class="slider-value" id="bs-time-val">1.0</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="bs-time" min="0.05" max="5" step="0.05" value="1">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Risk-Free Rate</label>
+                                <span class="slider-value" id="bs-rate-val">5%</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="bs-rate" min="0" max="15" step="0.25" value="5">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label>Volatility (σ)</label>
+                                <span class="slider-value" id="bs-vol-val">20%</span>
+                            </div>
+                            <input type="range" class="tool-slider" id="bs-vol" min="5" max="100" step="1" value="20">
+                        </div>
+                    </div>
+                </div>
+                <div class="bs-results reveal">
+                    <div class="tool-card">
+                        <h3>Option Pricing</h3>
+                        <div class="bs-pricing">
+                            <div class="bs-price-card call">
+                                <span class="label">Call Price</span>
+                                <span class="value" id="bs-call-price">$0.00</span>
+                            </div>
+                            <div class="bs-price-card put">
+                                <span class="label">Put Price</span>
+                                <span class="value" id="bs-put-price">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <h3>The Greeks</h3>
+                        <div class="bs-greeks-grid" id="bs-greeks">
+                            <div class="bs-greek-item"><span class="symbol">Δ</span><span class="name">Delta</span><span class="val" id="bs-delta">0</span></div>
+                            <div class="bs-greek-item"><span class="symbol">Γ</span><span class="name">Gamma</span><span class="val" id="bs-gamma">0</span></div>
+                            <div class="bs-greek-item"><span class="symbol">Θ</span><span class="name">Theta</span><span class="val" id="bs-theta">0</span></div>
+                            <div class="bs-greek-item"><span class="symbol">ν</span><span class="name">Vega</span><span class="val" id="bs-vega">0</span></div>
+                            <div class="bs-greek-item"><span class="symbol">ρ</span><span class="name">Rho</span><span class="val" id="bs-rho">0</span></div>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Payoff Diagram</h3>
+                        <div class="bs-payoff-wrap">
+                            <svg id="bs-payoff" viewBox="0 0 600 280"></svg>
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <div class="bs-heatmap-wrap">
+                            <h4>Call Price Sensitivity (Spot × Volatility)</h4>
+                            <div class="bs-heatmap" id="bs-heatmap"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">07</span>
+                <span class="section-tag">10</span>
                 <h2 class="section-title">Let's <span class="text-gold">Connect</span></h2>
             </div>
             <div class="contact-grid">
@@ -589,9 +866,9 @@
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             <span>sakshiknlal@gmail.com</span>
                         </a>
-                        <a href="tel:+447985365013" class="contact-link">
+                        <a href="tel:+447386071880" class="contact-link">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                            <span>+44 7985 365013</span>
+                            <span>+44 7386 071880</span>
                         </a>
                         <a href="https://www.linkedin.com/in/sakshi-lal-k" target="_blank" rel="noopener" class="contact-link">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -630,7 +907,7 @@
                 <div class="footer-links">
                     <a href="mailto:sakshiknlal@gmail.com">Email</a>
                     <a href="https://www.linkedin.com/in/sakshi-lal-k" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="tel:+447985365013">Phone</a>
+                    <a href="tel:+447386071880">Phone</a>
                 </div>
             </div>
         </div>

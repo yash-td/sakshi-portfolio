@@ -1217,7 +1217,635 @@ strong {
     line-height: 1.7;
 }
 
+/* --- Shared Tool Styles --- */
+.tool-section .container {
+    max-width: var(--container-width);
+}
+
+.tool-intro {
+    max-width: 700px;
+    margin-bottom: 48px;
+}
+
+.tool-intro p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.tool-inputs {
+    position: sticky;
+    top: calc(var(--nav-height) + 48px);
+}
+
+.tool-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: border-color 0.3s;
+}
+
+.tool-card:hover {
+    border-color: var(--border-hover);
+}
+
+.tool-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+}
+
+.slider-group {
+    margin-bottom: 20px;
+}
+
+.slider-group:last-child {
+    margin-bottom: 0;
+}
+
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.slider-header label {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.slider-value {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--gold);
+    font-weight: 500;
+}
+
+.tool-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--border);
+    outline: none;
+    cursor: pointer;
+}
+
+.tool-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--gold);
+    cursor: pointer;
+    border: 2px solid var(--bg-primary);
+    box-shadow: 0 0 0 3px var(--gold-glow-strong);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.tool-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 5px var(--gold-glow-strong);
+}
+
+.tool-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--gold);
+    cursor: pointer;
+    border: 2px solid var(--bg-primary);
+    box-shadow: 0 0 0 3px var(--gold-glow-strong);
+}
+
+.tool-slider::-moz-range-track {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--border);
+}
+
+/* --- DCF Calculator Section --- */
+.dcf-calculator {
+    background: var(--bg-primary);
+}
+
+.dcf-results .tool-card {
+    margin-bottom: 24px;
+}
+
+.dcf-results .tool-card:last-child {
+    margin-bottom: 0;
+}
+
+.dcf-hero-value {
+    text-align: center;
+    padding: 16px 0;
+}
+
+.dcf-hero-value .label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.dcf-hero-value .value {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1.1;
+}
+
+.dcf-hero-value .sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    display: block;
+}
+
+.dcf-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.dcf-breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.dcf-breakdown-item .label {
+    color: var(--text-secondary);
+}
+
+.dcf-breakdown-item .val {
+    font-family: var(--font-mono);
+    color: var(--gold);
+    font-weight: 500;
+}
+
+/* DCF Bar Chart */
+.dcf-bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 200px;
+    padding: 16px 0;
+}
+
+.dcf-bar-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.dcf-bar {
+    width: 100%;
+    max-width: 40px;
+    background: linear-gradient(to top, var(--gold-dark), var(--gold));
+    border-radius: 4px 4px 0 0;
+    transition: height 0.4s var(--ease-out);
+    min-height: 2px;
+    position: relative;
+}
+
+.dcf-bar.terminal {
+    background: linear-gradient(to top, #3a6f3a, var(--green));
+}
+
+.dcf-bar-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+    text-align: center;
+}
+
+.dcf-bar-val {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    white-space: nowrap;
+}
+
+/* DCF Table */
+.dcf-table-wrap {
+    overflow-x: auto;
+}
+
+.dcf-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+.dcf-table th {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 12px;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+.dcf-table th:first-child {
+    text-align: left;
+}
+
+.dcf-table td {
+    padding: 10px 12px;
+    text-align: right;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.dcf-table td:first-child {
+    text-align: left;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+}
+
+.dcf-table tr:last-child td {
+    border-bottom: none;
+}
+
+.dcf-table tr.total-row td {
+    border-top: 1px solid var(--gold-dark);
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* --- PPA Visualizer Section --- */
+.ppa-visualizer {
+    background: var(--bg-secondary);
+}
+
+.ppa-goodwill-display {
+    margin-top: 16px;
+    padding: 16px;
+    background: var(--gold-glow);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.ppa-goodwill-display .label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: var(--font-mono);
+}
+
+.ppa-goodwill-display .value {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-top: 4px;
+}
+
+.ppa-goodwill-display.bargain .value {
+    color: var(--green);
+}
+
+.ppa-goodwill-display .warning {
+    font-size: 0.75rem;
+    color: var(--green);
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* PPA Waterfall Chart */
+.ppa-waterfall-wrap {
+    padding: 16px 0;
+}
+
+.ppa-waterfall-wrap svg {
+    width: 100%;
+    display: block;
+}
+
+.ppa-waterfall-bar {
+    transition: all 0.4s var(--ease-out);
+}
+
+/* PPA Summary Table */
+.ppa-summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+}
+
+.ppa-summary-table th {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 12px;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+}
+
+.ppa-summary-table th:first-child {
+    text-align: left;
+}
+
+.ppa-summary-table td {
+    padding: 10px 12px;
+    text-align: right;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+}
+
+.ppa-summary-table td:first-child {
+    text-align: left;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+}
+
+.ppa-summary-table .color-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.ppa-summary-table tr:last-child td {
+    border-bottom: none;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* --- Black-Scholes Section --- */
+.black-scholes {
+    background: var(--bg-primary);
+}
+
+.bs-pricing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 0;
+}
+
+.bs-price-card {
+    text-align: center;
+    padding: 20px 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.bs-price-card .label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.bs-price-card.call .label {
+    color: var(--green);
+}
+
+.bs-price-card.put .label {
+    color: #f87171;
+}
+
+.bs-price-card .value {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.bs-price-card.call .value {
+    color: var(--green);
+}
+
+.bs-price-card.put .value {
+    color: #f87171;
+}
+
+/* Greeks Grid */
+.bs-greeks-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.bs-greek-item {
+    text-align: center;
+    padding: 14px 8px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.bs-greek-item .symbol {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.bs-greek-item .name {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.bs-greek-item .val {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* BS Payoff Diagram */
+.bs-payoff-wrap {
+    padding: 8px 0;
+}
+
+.bs-payoff-wrap svg {
+    width: 100%;
+    display: block;
+}
+
+/* BS Heatmap */
+.bs-heatmap-wrap h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.bs-heatmap {
+    display: grid;
+    gap: 2px;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+}
+
+.bs-heatmap-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 2px;
+    border-radius: 3px;
+    color: var(--bg-primary);
+    font-weight: 600;
+    min-height: 28px;
+    transition: all 0.3s;
+}
+
+.bs-heatmap-header {
+    color: var(--text-muted);
+    background: none !important;
+    font-size: 0.58rem;
+}
+
+.bs-heatmap-row-label {
+    color: var(--text-muted);
+    background: none !important;
+    text-align: right;
+    padding-right: 6px;
+    justify-content: flex-end;
+}
+
+/* --- Nav Dropdown --- */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-toggle {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: color 0.2s, background 0.2s;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+}
+
+.nav-dropdown-toggle:hover {
+    color: var(--text-primary);
+}
+
+.nav-dropdown-toggle svg {
+    transition: transform 0.2s;
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+    transform: translateX(-50%) translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+.nav-dropdown.open .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown.open .nav-dropdown-toggle svg {
+    transform: rotate(180deg);
+}
+
+@media (hover: hover) {
+    .nav-dropdown:hover .nav-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown:hover .nav-dropdown-toggle svg {
+        transform: rotate(180deg);
+    }
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+}
+
+.nav-dropdown-menu a:hover {
+    background: var(--gold-glow);
+    color: var(--text-primary);
+}
+
 /* --- Contact Section --- */
+.contact {
+    background: var(--bg-secondary);
+}
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -1400,6 +2028,18 @@ strong {
     .contact-grid {
         grid-template-columns: 1fr;
     }
+
+    .tool-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tool-inputs {
+        position: static;
+    }
+
+    .bs-greeks-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1441,6 +2081,52 @@ strong {
 
     .ticker {
         display: none;
+    }
+
+    /* Mobile nav dropdown: flatten */
+    .nav-dropdown {
+        display: contents;
+    }
+
+    .nav-dropdown-toggle {
+        display: none;
+    }
+
+    .nav-dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        min-width: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .nav-dropdown-menu a {
+        font-size: 1.2rem;
+        padding: 8px 16px;
+    }
+
+    .dcf-bar-chart {
+        height: 160px;
+    }
+
+    .dcf-bar-val {
+        display: none;
+    }
+
+    .tool-card {
+        padding: 24px;
+    }
+
+    .dcf-hero-value .value {
+        font-size: 2.2rem;
     }
 
     .hero {
@@ -1536,5 +2222,33 @@ strong {
 
     .stat-divider {
         height: 24px;
+    }
+
+    .bs-greeks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bs-pricing {
+        grid-template-columns: 1fr;
+    }
+
+    .bs-price-card .value {
+        font-size: 1.6rem;
+    }
+
+    .dcf-table,
+    .ppa-summary-table {
+        font-size: 0.72rem;
+    }
+
+    .dcf-table td,
+    .dcf-table th,
+    .ppa-summary-table td,
+    .ppa-summary-table th {
+        padding: 8px 6px;
+    }
+
+    .ppa-goodwill-display .value {
+        font-size: 1.3rem;
     }
 }
