@@ -40,17 +40,7 @@
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#achievements" class="nav-link">Achievements</a>
                 <a href="#interests" class="nav-link">Interests</a>
-                <div class="nav-dropdown" id="navDropdown">
-                    <button class="nav-dropdown-toggle" aria-expanded="false">
-                        Tools
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="nav-dropdown-menu">
-                        <a href="#dcf-calculator" class="nav-link">DCF Calculator</a>
-                        <a href="#ppa-visualizer" class="nav-link">PPA Visualizer</a>
-                        <a href="#black-scholes" class="nav-link">Black-Scholes</a>
-                    </div>
-                </div>
+                <a href="#tools" class="nav-link">Tools</a>
                 <a href="#contact" class="nav-link nav-link--cta">Get in Touch</a>
             </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -584,18 +574,28 @@
         </div>
     </section>
 
-    <!-- DCF Calculator Section -->
-    <section class="section tool-section dcf-calculator" id="dcf-calculator">
+    <!-- Finance Tools Section -->
+    <section class="section tools-section" id="tools">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">07</span>
-                <h2 class="section-title">DCF <span class="text-gold">Calculator</span></h2>
+                <h2 class="section-title">Finance <span class="text-gold">Tools</span></h2>
             </div>
             <div class="tool-intro reveal">
-                <p>A discounted cash flow model that projects future EBITDA, discounts it to present value using WACC, and calculates terminal value via the Gordon Growth Model. Adjust the inputs to see how each assumption drives enterprise value.</p>
+                <p>Interactive financial models I built to demonstrate core valuation and pricing concepts. Select a tool below to explore.</p>
             </div>
+            <div class="tools-tabs">
+                <button class="tools-tab active" data-tab="dcf">DCF Calculator</button>
+                <button class="tools-tab" data-tab="ppa">PPA Visualizer</button>
+                <button class="tools-tab" data-tab="bs">Black-Scholes</button>
+            </div>
+        </div>
+
+        <div class="tool-panel active" id="tool-panel-dcf">
+    <div class="tool-section dcf-calculator" id="dcf-calculator">
+        <div class="container">
             <div class="tool-grid">
-                <div class="tool-inputs reveal">
+                <div class="tool-inputs">
                     <div class="tool-card">
                         <h3>Model Inputs</h3>
                         <div class="slider-group">
@@ -642,7 +642,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="dcf-results reveal">
+                <div class="dcf-results">
                     <div class="tool-card">
                         <div class="dcf-hero-value">
                             <span class="label">Enterprise Value</span>
@@ -667,20 +667,13 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div></div>
 
-    <!-- PPA Visualizer Section -->
-    <section class="section tool-section ppa-visualizer" id="ppa-visualizer">
+        <div class="tool-panel" id="tool-panel-ppa">
+    <div class="tool-section ppa-visualizer" id="ppa-visualizer">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">08</span>
-                <h2 class="section-title">PPA <span class="text-gold">Visualizer</span></h2>
-            </div>
-            <div class="tool-intro reveal">
-                <p>Visualise how a purchase price allocation (ASC 805) breaks down an acquisition price into identifiable intangible assets, with goodwill as the residual. Adjust the total price and individual asset values to see the waterfall in real time.</p>
-            </div>
             <div class="tool-grid">
-                <div class="tool-inputs reveal">
+                <div class="tool-inputs">
                     <div class="tool-card">
                         <h3>Allocation Inputs</h3>
                         <div class="slider-group">
@@ -731,7 +724,7 @@
                         <div class="value" id="ppa-goodwill-val">$200M</div>
                     </div>
                 </div>
-                <div class="ppa-results reveal">
+                <div class="ppa-results">
                     <div class="tool-card">
                         <h3>Waterfall Chart</h3>
                         <div class="ppa-waterfall-wrap" id="ppa-waterfall-wrap"></div>
@@ -748,20 +741,13 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div></div>
 
-    <!-- Black-Scholes Calculator Section -->
-    <section class="section tool-section black-scholes" id="black-scholes">
+        <div class="tool-panel" id="tool-panel-bs">
+    <div class="tool-section black-scholes" id="black-scholes">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">09</span>
-                <h2 class="section-title">Black-Scholes <span class="text-gold">Calculator</span></h2>
-            </div>
-            <div class="tool-intro reveal">
-                <p>The Black-Scholes-Merton model prices European call and put options, along with the five Greeks that measure sensitivity to market parameters. Adjust inputs to explore how spot price, volatility, and time interact to determine option value.</p>
-            </div>
             <div class="tool-grid">
-                <div class="tool-inputs reveal">
+                <div class="tool-inputs">
                     <div class="tool-card">
                         <h3>Option Parameters</h3>
                         <div class="slider-group">
@@ -801,7 +787,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bs-results reveal">
+                <div class="bs-results">
                     <div class="tool-card">
                         <h3>Option Pricing</h3>
                         <div class="bs-pricing">
@@ -838,13 +824,15 @@
                 </div>
             </div>
         </div>
+    </div></div>
+
     </section>
 
     <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">10</span>
+                <span class="section-tag">08</span>
                 <h2 class="section-title">Let's <span class="text-gold">Connect</span></h2>
             </div>
             <div class="contact-grid">

@@ -189,33 +189,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Nav Dropdown (touch devices) ---
-    const navDropdown = document.getElementById('navDropdown');
-    if (navDropdown) {
-        const toggle = navDropdown.querySelector('.nav-dropdown-toggle');
-        toggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navDropdown.classList.toggle('open');
-            toggle.setAttribute('aria-expanded', navDropdown.classList.contains('open'));
+    // --- Tools Tab Switching ---
+    document.querySelectorAll('.tools-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.tools-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+            tab.classList.add('active');
+            const panel = document.getElementById('tool-panel-' + tab.dataset.tab);
+            if (panel) panel.classList.add('active');
+            // Re-initialize sliders in newly visible panel so fills render
+            panel.querySelectorAll('.tool-slider').forEach(s => updateSliderFill(s));
         });
-        document.addEventListener('click', (e) => {
-            if (!navDropdown.contains(e.target)) {
-                navDropdown.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-        // Close dropdown when a link inside is clicked
-        navDropdown.querySelectorAll('.nav-dropdown-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navDropdown.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-                // Also close mobile nav if open
-                navToggle.classList.remove('open');
-                navLinks.classList.remove('open');
-                document.body.style.overflow = '';
-            });
-        });
-    }
+    });
 
     // --- Slider fill utility ---
     function updateSliderFill(slider) {
